@@ -1,0 +1,38 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <form action="numeros.php" method="GET" enctype="application/x-www-form-urlencoded">
+        <div id="container">
+            <div id="div_numero">
+                <span>Numero</span>    
+                <input type="number" name="numero[]" value="0" />
+            </div>
+            
+            
+        </div>
+        <div>
+            <button type="button" onclick="agregarNumero();">Agregar otro número</button>
+            <button type="submit">Enviar datos</button>
+        </div>
+    </form>
+ </body>
+ <script>
+    function agregarNumero() {
+        const div_numero = document.querySelector('#div_numero');
+        const nuevo_div = document.createElement('div');
+
+        nuevo_div.innerHTML = div_numero.innerHTML;
+
+        const div_container = document.querySelector('#container');
+
+        div_container.append(nuevo_div);
+
+    }
+ </script>
+ </html>
